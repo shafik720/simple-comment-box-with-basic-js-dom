@@ -3,7 +3,12 @@ document.getElementById('postButton').addEventListener('click',function(){
     let userName = document.getElementById('nameInput').value;
     let comment = document.getElementById('comment').value;
 
-    // getting value(name) from user
+    if(document.getElementById('nameInput').value=='' || document.getElementById('comment').value==''){
+        //reset name and comment box after user input
+        document.getElementById('nameInput').value = '';
+        document.getElementById('comment').value = '';
+    }else{
+        // getting value(name) from user
     let h5 = document.createElement('h5');
     h5.innerText = userName;
 
@@ -25,6 +30,7 @@ document.getElementById('postButton').addEventListener('click',function(){
     nameDiv.classList.add('name','d-flex','justify-content-end');
     nameDiv.appendChild(h5);
     
+    // adding name & comments together
     let mainBox = document.getElementById('mainBox');
     mainBox.appendChild(mainCommentdiv);
 
@@ -34,4 +40,7 @@ document.getElementById('postButton').addEventListener('click',function(){
     //reset name and comment box after user input
     document.getElementById('nameInput').value = '';
     document.getElementById('comment').value = '';
+    }
+
+    
 })
