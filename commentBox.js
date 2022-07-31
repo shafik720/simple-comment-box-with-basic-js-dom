@@ -31,5 +31,7 @@ document.getElementById('postButton').addEventListener('click',function(){
     mainCommentdiv.appendChild(commentDiv);
     mainCommentdiv.appendChild(nameDiv);
 
-    
+    //reset name and comment box after user input
+    document.getElementById('nameInput').value = '';
+    document.getElementById('comment').value = '';
 })
