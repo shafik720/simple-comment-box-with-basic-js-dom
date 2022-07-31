@@ -1,12 +1,15 @@
 
 document.getElementById('postButton').addEventListener('click',function(){
     let userName = document.getElementById('nameInput').value;
+    let comment = document.getElementById('comment').value;
 
-    // this is name got from user
+    // getting value(name) from user
     let h5 = document.createElement('h5');
     h5.innerText = userName;
 
-    
+    // getting value(comment) from user
+    let getComment = document.createElement('p');
+    getComment.innerText = comment;
 
     // this is main div for comments div
     let mainCommentdiv = document.createElement('div');
@@ -14,7 +17,8 @@ document.getElementById('postButton').addEventListener('click',function(){
     
     // adding comments
     let commentDiv = document.createElement('div');
-    commentDiv.classList.add('comments')
+    commentDiv.classList.add('comments');
+    commentDiv.appendChild(getComment);
     
     // adding names
     let nameDiv = document.createElement('div');
@@ -24,7 +28,8 @@ document.getElementById('postButton').addEventListener('click',function(){
     let mainBox = document.getElementById('mainBox');
     mainBox.appendChild(mainCommentdiv);
 
-    
+    mainCommentdiv.appendChild(commentDiv);
     mainCommentdiv.appendChild(nameDiv);
 
+    
 })
